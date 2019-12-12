@@ -27,21 +27,45 @@ const Dashboard = ({
 				<i className='fas fa-user'></i> Welcome {user && user.name}
 			</p>
 			{profile !== null ? (
-				<Fragment>
-					<DashboardActions />
-					<Experience experience={profile.experience} />
-					<Education education={profile.education} />
-					<div className='my-2' onClick={() => deleteAccount()}>
-						<button className='btn btn-danger'>
-							<i className='fas fa-user-minus'></i> Delete my Account
-						</button>
-					</div>
-				</Fragment>
+				<div className='dboard-grid'>
+					<Link to='/edit-profile'>
+						<div className='bg-primary upd center p-1'>
+							<h2 className='x-large'>
+								<i className='fas fa-user'></i>
+								<br />
+								Update Profile
+							</h2>
+							<p className='lead'>
+								Update your profile so that your potential matches can know more
+								about you.
+							</p>
+						</div>
+					</Link>
+					<Link to='/match-finder'>
+						<div className='bg-dark lik center p-1'>
+							<h2 className='x-large'>
+								<i className='fas fa-heart'></i>
+								<br />
+								Start Liking
+							</h2>
+							<p className='lead'>Start liking to find a match</p>
+						</div>
+					</Link>
+				</div>
 			) : (
 				<Fragment>
-					<p>Please set up your Profile </p>
-					<Link to='/create-profile' className='btn btn-primary my-1'>
-						Create Profile
+					<Link to='/create-profile'>
+						<div className='bg-primary cre center p-1'>
+							<h2 className='x-large'>
+								<i className='fas fa-user'></i>
+								<br />
+								Create Profile
+							</h2>
+							<p className='lead m-2'>
+								Create your profile so that your potential matches can know more
+								about you and to start likeing
+							</p>
+						</div>
 					</Link>
 				</Fragment>
 			)}

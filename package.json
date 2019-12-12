@@ -1,7 +1,7 @@
 {
-	"name": "mern_stack_front_to_back_course",
+	"name": "matcha",
 	"version": "1.0.0",
-	"description": "Devconnector",
+	"description": "WTC_ Project",
 	"main": "index.js",
 	"scripts": {
 		"start": "node server",
@@ -12,14 +12,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/mjbotes/MERN_Stack_Front_To_Back_Course.git"
+		"url": "git+https://github.com/mjbotes/Matcha.git"
 	},
 	"author": "mbotes",
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/mjbotes/MERN_Stack_Front_To_Back_Course/issues"
 	},
-	"homepage": "https://github.com/mjbotes/MERN_Stack_Front_To_Back_Course#readme",
+	"homepage": "https://github.com/mjbotes/Matcha",
 	"dependencies": {
 		"bcryptjs": "^2.4.3",
 		"config": "^3.2.4",

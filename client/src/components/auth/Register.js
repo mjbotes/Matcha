@@ -8,13 +8,24 @@ import PropTypes from 'prop-types';
 
 const Register = ({ setAlert, register, isAuthenticated }) => {
 	const [formData, setFormData] = useState({
-		name: '',
+		firstname: '',
+		middlename: '',
+		surname: '',
+		dob: '',
 		email: '',
 		password: '',
 		cPassword: ''
 	});
 
-	const { name, email, password, cPassword } = formData;
+	const {
+		firstname,
+		middlename,
+		surname,
+		dob,
+		email,
+		password,
+		cPassword
+	} = formData;
 
 	const onChange = e =>
 		setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -24,7 +35,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 		if (password !== cPassword) {
 			setAlert('Passwords do not match.', 'danger');
 		} else {
-			register({ name, email, password });
+			register({ firstname, middlename, surname, dob, email, password });
 		}
 	};
 
@@ -44,11 +55,37 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 				<div className='form-group'>
 					<input
 						type='text'
-						placeholder='Name'
-						name='name'
-						value={name}
+						placeholder='First Name'
+						name='firstname'
+						value={firstname}
 						onChange={e => onChange(e)}
-						//required
+					/>
+				</div>
+				<div className='form-group'>
+					<input
+						type='text'
+						placeholder='Middle Name'
+						name='middlename'
+						value={middlename}
+						onChange={e => onChange(e)}
+					/>
+				</div>
+				<div className='form-group'>
+					<input
+						type='text'
+						placeholder='Surname'
+						name='surname'
+						value={surname}
+						onChange={e => onChange(e)}
+					/>
+				</div>
+				<div className='form-group'>
+					<input
+						type='date'
+						placeholder='Date of Birth'
+						name='dob'
+						value={dob}
+						onChange={e => onChange(e)}
 					/>
 				</div>
 				<div className='form-group'>
@@ -60,10 +97,6 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 						onChange={e => onChange(e)}
 						//required
 					/>
-					<small className='form-text'>
-						This site uses Gravatar, so if you want an profile image use a
-						Gravatar email.
-					</small>
 				</div>
 				<div className='form-group'>
 					<input

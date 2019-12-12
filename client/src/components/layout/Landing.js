@@ -11,10 +11,11 @@ const Landing = ({ isAuthenticated }) => {
 		<section className='landing'>
 			<div className='dark-overlay'>
 				<div className='landing-inner'>
-					<h1 className='x-large'>Developer Connector</h1>
+					<h1 className='x-large'>We promise you love</h1>
 					<p className='lead'>
-						Create Developper Profile/Portfolio share posts and get help from
-						other Developers.
+						Find your perfect match <i className='fas fa-kiss-wink-heart'></i>{' '}
+						with our one of a kind mathching algorithm. Are you ready to find
+						the love of your life?
 					</p>
 					<div className='buttons'>
 						<Link to='/register' className='btn btn-primary'>

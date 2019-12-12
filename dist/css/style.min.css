@@ -321,7 +321,7 @@ img {
 }
 .landing {
 	position: relative;
-	background: url('./img/landing.jpg') no-repeat center center/cover;
+	background: url('../img/landing.jpg') no-repeat center center/cover;
 	height: 100vh;
 }
 .landing-inner {
@@ -456,48 +456,6 @@ img {
 .post img {
 	width: 150px;
 }
-
-.dboard-grid {
-	display: grid;
-	grid-template-areas: 'upd lik';
-	grid-gap: 2rem;
-	margin: 0 auto;
-	-ms-grid-columns: 2fr 2fr;
-	grid-template-columns: 2fr 2fr;
-}
-
-.upd {
-	/* display: flex; */
-	grid-area: 'upd';
-	display: block;
-	height: 65vh;
-	align-content: center;
-}
-
-.lik {
-	/* display: flex; */
-	grid-area: 'lik';
-	display: block;
-	height: 65vh;
-	color: white;
-	align-self: center;
-}
-
-.cre {
-	display: block;
-	width: 500px;
-	height: 65vh;
-	margin: 0 auto;
-}
-
-.chat-grid {
-	display: grid;
-	grid-template-areas: 'msgs chat';
-	width: 100%;
-	-ms-grid-columns: 1fr 3fr;
-	grid-template-columns: 1fr 3fr;
-}
-
 @media (max-width: 700px) {
 	.hide-sm {
 		display: none;
@@ -554,14 +512,4 @@ img {
 	.post button {
 		padding: 0.3rem 0.4rem;
 	}
-}
-
-.center {
-	align-self: center;
-	margin: 0 auto;
-	text-align: center;
-}
-
-h2 i {
-	font-size: 10rem;
 }
