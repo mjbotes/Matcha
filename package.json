@@ -1,0 +1,37 @@
+{
+	"name": "mern_stack_front_to_back_course",
+	"version": "1.0.0",
+	"description": "Devconnector",
+	"main": "index.js",
+	"scripts": {
+		"start": "node server",
+		"server": "nodemon server",
+		"client": "npm start --prefix client",
+		"dev": "concurrently \"npm run server\" \"npm run client\"",
+		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mjbotes/MERN_Stack_Front_To_Back_Course.git"
+	},
+	"author": "mbotes",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/mjbotes/MERN_Stack_Front_To_Back_Course/issues"
+	},
+	"homepage": "https://github.com/mjbotes/MERN_Stack_Front_To_Back_Course#readme",
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"config": "^3.2.4",
+		"express": "^4.17.1",
+		"express-validator": "^6.3.0",
+		"gravatar": "^1.8.0",
+		"jsonwebtoken": "^8.5.1",
+		"mongoose": "^5.7.5",
+		"request": "^2.88.0"
+	},
+	"devDependencies": {
+		"concurrently": "^5.0.0",
+		"nodemon": "^2.0.1"
+	}
+}
