@@ -4,9 +4,9 @@ const auth = require('../../middleware/auth');
 const config = require('config');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const { check, validationResult } = require('express-validator');
+/***/const { check, validationResult } = require('express-validator');
 
-const User = require('../../models/User');
+/***/const User = require('../../models/User');
 
 //@route    GET api/auth
 //@desc     Test route
@@ -26,11 +26,11 @@ router.get('/', auth, async (req, res) => {
 router.post(
 	'/',
 	[
-		check('email', 'Please enter a valid email').isEmail(),
-		check('password', 'Password is required').exists()
+		/***/check('email', 'Please enter a valid email').isEmail(),
+		/***/check('password', 'Password is required').exists()
 	],
 	async (req, res) => {
-		const errors = validationResult(req);
+		/***/const errors = validationResult(req);
 		if (!errors.isEmpty()) {
 			return res.status(400).json({ errors: errors.array() });
 		}
@@ -38,7 +38,7 @@ router.post(
 		try {
 			// See if user Exists
 
-			let user = await User.findOne({ email });
+			/***/let user = await User.findOne({ email });
 
 			if (!user) {
 				return res
@@ -48,7 +48,7 @@ router.post(
 
 			// match email and password
 
-			const isMatch = await bcrypt.compare(password, user.password);
+			/***/const isMatch = await bcrypt.compare(password, user.password);
 
 			if (!isMatch) {
 				return res

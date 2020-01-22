@@ -1,21 +1,37 @@
-const mongoose = require('mongoose');
-const config = require('config');
-const db = config.get('mongoURI');
+var mysql = require('mysql');
+const db = require('config');
+var ct = require('./setup');
+var credentials = {};
+credentials.user = db.user;
+credentials.host = db.host;
+credentials.password = db.password;
 
-const connectDB = async () => {
+const connectMySql = async () => {
 	try {
-		await mongoose.connect(db, {
-			useNewUrlParser: true,
-			useCreateIndex: true,
-			useUnifiedTopology: true,
-			useFindAndModify: false
-		});
+		var con = await mysql.createConnection(credentials);
 
-		console.log('MongoDB Conected...');
+		console.log('MySql Connected...');
+
+		con.connect(connection);
+
+		function connection(err) {
+			if (err) throw err;
+			console.log("Connected!");
+			con.query("CREATE DATABASE IF NOT EXISTS " + db.database, databaseCallback);
+		}
+
+		function databaseCallback(err, result) {
+			if (err) throw err;
+			console.log(result);
+			console.log("Database created");
+
+			ct(con);
+		}
 	} catch (err) {
 		console.log(err.message);
 		process.exit(1);
 	}
+	return con;
 };
 
-module.exports = connectDB;
+module.exports = connectMySql;

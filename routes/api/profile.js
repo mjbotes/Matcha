@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const auth = require('../../middleware/auth');
-const { check, validationResult } = require('express-validator');
+/***/const { check, validationResult } = require('express-validator');
 const request = require('request');
 const config = require('config');
 
-const Profile = require('../../models/Profile');
-const User = require('../../models/User');
-const Post = require('../../models/Post');
+/***/const Profile = require('../../models/Profile');
+/***/const User = require('../../models/User');
+/***/const Post = require('../../models/Post');
 
 //@route    GET api/profile/me
 //@desc     Get current users profile
@@ -35,7 +35,7 @@ router.get('/me', auth, async (req, res) => {
 router.post(
 	'/',
 	[
-		auth,
+		/***/auth,
 		[
 			check('status', 'Status is required')
 				.not()
@@ -52,7 +52,7 @@ router.post(
 			return res.status(400).json({ errors: errors.array() });
 		}
 
-		const {
+		/***/const {
 			company,
 			website,
 			location,
